@@ -1,7 +1,7 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{研究背景}{3}{0}{1}
 \beamer@sectionintoc {2}{作成したモデル}{4}{0}{2}
-\beamer@subsectionintoc {2}{1}{カミキリムシの幼虫の食痕パターン}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{アプローチ}{4}{0}{2}
 \beamer@sectionintoc {3}{解析結果}{5}{0}{3}
 \beamer@sectionintoc {4}{まとめ}{6}{0}{4}
 \beamer@sectionintoc {5}{参考文献}{7}{0}{5}
