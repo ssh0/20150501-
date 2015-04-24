@@ -1,0 +1,125 @@
+\documentclass[a4paper, dvipdfmx, mathserif]{beamer}
+% 印刷時には[]内に”handout”を追記する。
+\usepackage{moreverb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{txfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+
+
+\bibliographystyle{junsrt}
+
+
+\usetheme{default}
+% Hannover, boxes, default
+\usecolortheme{orchid}
+\usefonttheme{default} %{professionalfonts}
+\useinnertheme{rectangles} % rounded rectangles
+%%%%%%%%%%%%%%%% フレーム外側のテーマの選択(省略可)
+%%\useoutertheme{default}
+\useoutertheme{infolines}
+%% \useoutertheme{miniframes}
+%% \useoutertheme{smoothbars}
+% \useoutertheme{sidebar}
+%% \useoutertheme{split}
+%% \useoutertheme{shadow}
+%% \useoutertheme{tree}
+%% \useoutertheme{smoothtree}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{frametitle}[default][center]
+
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{subtitle}{size=\small,series=\bfseries}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+
+% \setbeamerfont{title}{size=\large}
+% \setbeamerfont{frametitle}{size=\large}
+
+% PDFのしおりが文字化けしないようにする
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+
+
+\newenvironment<>{varblock}[2][\textwidth]{%
+\setlength{\textwidth}{#1}
+\begin{actionenv}#3%
+\def\insertblocktitle{#2}%
+\par%
+\usebeamertemplate{block begin}}
+{\par%
+\usebeamertemplate{block end}%
+\end{actionenv}}
+
+\captionsetup[figure]{font=scriptsize,labelfont=scriptsize}
+
+\title[セミナー発表]{効率とシステムサイズの関係に対する確率モデルによる考察}
+%\subtitle{}                 % 省略可
+\author[藤本將太郎]{}
+\institute{山崎研 M4 藤本將太郎}
+\date{2015/05/01}
+
+\begin{document}
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{アウトライン}
+卒業論文で扱った内容に関して
+    \begin{itemize}
+        \item 研究背景
+        \item 作成したモデル
+        \item 解析結果
+        \item まとめ
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[plain]
+    \frametitle{アウトライン}
+    卒業論文で扱った内容に関して
+    \tableofcontents
+\end{frame}
+
+\section{研究背景}
+\begin{frame}
+  \frametitle{ポイント}
+\end{frame}
+
+\section{作成したモデル}
+\subsection{カミキリムシの幼虫の食痕パターン}
+\begin{frame}
+    \begin{center}
+        \Large{カミキリムシの幼虫の食痕パターン}
+    \end{center}
+\end{frame}
+
+\section{解析結果}
+\begin{frame}
+    \frametitle{解析結果}
+\end{frame}
+
+
+\section{まとめ}
+\begin{frame}
+    \frametitle{テーマのまとめ}
+\end{frame}
+
+\section{参考文献}
+\begin{frame}
+    \frametitle{参考文献}
+%\beamertemplatetextbibitems
+%\bibliography{reference}
+\end{frame}
+
+\end{document}
