@@ -1,0 +1,340 @@
+<section class="slide level1">
+
+<div align="center"><h1>
+<p>効率とシステムサイズの関係に対する</p>
+</h1>
+    <h1>
+<p>確率モデルによる考察</p>
+</h1></div>
+<div align="right">
+<p>早稲田大学先進理工学研究科</p>
+</div>
+<div align="right">
+<p>物理学及応用物理学専攻</p>
+</div>
+<div align="right">
+<p>山崎研究室 M1 藤本將太郎</p>
+</div>
+<div align="right">
+<p>2015年5月1日セミナー発表</p>
+</div>
+</section>
+<section id="アウトライン" class="slide level1">
+<h1>アウトライン</h1>
+<ul>
+<li>卒業論文で扱った内容に関して
+<ul>
+<li>研究背景</li>
+<li>作成したモデル</li>
+<li>解析結果</li>
+<li>まとめ</li>
+</ul></li>
+</ul>
+</section>
+<section id="卒業論文効率とシステムサイズの関係に対する確率モデルによる考察" class="slide level1">
+<h1>卒業論文『効率とシステムサイズの関係に対する確率モデルによる考察』</h1>
+<h2 id="背景">背景</h2>
+<ul>
+<li>アロメトリー則(<span class="math">\(E\sim M^{3/4}\)</span>)</li>
+<li>ホヤの実験によるシステムサイズと代謝率の関係</li>
+<li>会議やグループワークの参加人数と効率の関係</li>
+<li><p>一般化</p>
+<p>系のシステムサイズが大きくなると、その特徴量がシステムサイズに対して比例して大きくはならず、相互作用などによって期それより小さくなるような系</p></li>
+</ul>
+<h2 id="アプローチ">アプローチ</h2>
+<ul>
+<li>会議をイメージしながらも、より一般的、抽象的なモデルを作成</li>
+<li>モデルに関して解析的な計算、数値シミュレーション</li>
+<li>特徴量のシステムサイズに対する応答を調べる</li>
+</ul>
+<h2 id="モデルの作成">モデルの作成</h2>
+<h3 id="設定">設定</h3>
+<ul>
+<li>はじめに一つの議題が与えられる</li>
+<li>システムサイズは会議の参加者の人数<span class="math">\(N\)</span>とする</li>
+<li>参加者<span class="math">\(X_{1}, \cdots , X_{N}\)</span></li>
+<li>参加者はそれまでに提出された意見に関連した自分の意見を述べる</li>
+<li>発言の長さは参加者の数や意見には影響されないとする(離散時間<span class="math">\(k\)</span>の導入)</li>
+<li>ある時刻<span class="math">\(k\)</span>に発言するのは一人のみであるとする</li>
+<li>全体を統括する役割を持った参加者は考えない</li>
+<li>発言はそれを特徴づける<span class="math">\(a\)</span>(<span class="math">\(a&lt;+\infty\)</span>)個のパラメータの値で表せる</li>
+<li>各離散時刻<span class="math">\(k\)</span>になされた発言<span class="math">\(x_{k}\)</span>は<span class="math">\(\mathbb{R}^{a}\)</span>上の有界集合<span class="math">\(\Omega\subset \mathbb{R}^{a}\)</span>における1点</li>
+<li>時刻<span class="math">\(k\)</span>を1進めるごとに1つの点<span class="math">\(x_{k}\)</span>を選択し、この試行を時刻<span class="math">\(K\)</span>まで続ける</li>
+</ul>
+<p>意見の選ばれ方と選ばれた意見の位置関係によって決められるネットワークの性質によって会議の効率を考える</p>
+<div align="center">
+</div>
+<h3 id="用語">用語</h3>
+<ul>
+<li>会議 <span class="math">\(\rightarrow \)</span>試行</li>
+<li>意見 <span class="math">\(\rightarrow \)</span>点(<span class="math">\(x\)</span>)</li>
+<li>参加者 <span class="math">\(\rightarrow \)</span>集合<span class="math">\(\displaystyle X_{i} \subset X \left( = \bigcup _{i=1}^{N}X_{i}\right)\)</span></li>
+</ul>
+<p>点の選び方とネットワークの構成方法をいくつか仮定してモデルを作成。<br />それぞれにおける特徴量を計算し、システムサイズ<span class="math">\(N\)</span>との関係を考えるのにふさわしいはモデルはどれかを考察する</p>
+</section>
+<section id="解析" class="slide level1">
+<h1>解析</h1>
+<h2 id="x_iを選ぶ確率が等しく点xが01から一様に選ばれる場合">1. <span class="math">\(X_{i}\)</span>を選ぶ確率が等しく、点<span class="math">\(x\)</span>が<span class="math">\([0,1]\)</span>から一様に選ばれる場合</h2>
+<div align="center">
+</div>
+<ul>
+<li>点の選択規則:
+<ul>
+<li><span class="math">\([0,1]\)</span>の範囲から一様に選ばれる</li>
+</ul></li>
+<li>エッジの生成規則:
+<ul>
+<li>選択された点が閾値<span class="math">\(r\)</span>により定まる領域内にあるとき、そのノード間にエッジを張る</li>
+</ul></li>
+</ul>
+<p>時刻<span class="math">\(k+1\)</span>に点<span class="math">\(x_{k+1}\)</span>が選ばれた時、<span class="math">\(r\)</span>によって定まる領域</p>
+<p><span class="math">\[[\max(0,x-r), \min(x+r,1)]\]</span></p>
+<p>に入る点の個数<span class="math">\(Y\)</span>は、それまでに選択された点の数が<span class="math">\(k\)</span>個あることと、<span class="math">\(x_{k+1}\)</span>の大きさによってその中に点が存在する確率が異なることを考慮に入れて計算すると、確率変数<span class="math">\(Y\)</span>は以下の分布に従うことが分かる。</p>
+<p><span class="math">\[P[Y=y] = \ _{k}C_{y}p(x_{k+1}, r)^{y}(1-p(x_{k+1}r))^{k-y}\ \ \ 二項分布: B(k ,p(x_{k+1}, r))\]</span></p>
+<p><span class="math">\(k+1\)</span>番目に選ばれた点のまわりの領域に入る、すなわち時刻<span class="math">\(k+1\)</span>に結ばれるエッジの数の期待値<span class="math">\(l\)</span>は、</p>
+<p><span class="math">\[\begin{align}l(r,k)&amp;=&lt;&lt;yB(k, p(x_{k+1}, r))&gt;_{y}&gt;_{x_{k+1}}\\
+&amp;= &lt;kp(x_{k+1}, r)&gt;_{x_{k+1}} \\
+&amp;= k(-r^{2} + 2r)
+\end{align}\]</span></p>
+<p>Remark: システムサイズ<span class="math">\(N\)</span>との関連は無い</p>
+<h2 id="x_iを選ぶ確率が異なりxを01から一様に選ぶ場合">2. <span class="math">\(X_{i}\)</span>を選ぶ確率が異なり、<span class="math">\(x\)</span>を<span class="math">\([0,1]\)</span>から一様に選ぶ場合</h2>
+<ul>
+<li><span class="math">\(x\)</span>の選び方は同じ<br /><span class="math">\(\Rightarrow\)</span>選ばれた点<span class="math">\(x\)</span>によるネットワークは同じ</li>
+<li>時刻<span class="math">\(k\)</span>までの次数の総和<span class="math">\(L\)</span></li>
+</ul>
+<div align="center">
+</div>
+<div align="center">
+<p>図. 時刻<span class="math">\(k\)</span>までの次数の総和<span class="math">\(L\)</span></p>
+</div>
+<ul>
+<li><p>緑の曲線: 理論式(1より)</p>
+<p><span class="math">\[L = \frac{1}{2}(-r^{2} + 2r)k^{2}\]</span></p>
+<p><span class="math">\(\Rightarrow\)</span>一致</p></li>
+</ul>
+<h2 id="過去の点を参照して次の点xが選ばれる">2. 過去の点を参照して次の点<span class="math">\(x\)</span>が選ばれる</h2>
+<h3 id="設定-1">設定</h3>
+<ul>
+<li>確率変数<span class="math">\(x\)</span>は<span class="math">\(\Omega = [0, 1] \times [0,1]\)</span>に一様分布する</li>
+<li><span class="math">\(X_{i}\)</span>はそれぞれ予め<span class="math">\(S\)</span>個の点をもつ</li>
+<li><span class="math">\(X_{i}\)</span>ごとに、<strong>参照点(過去の点)から最も近い点</strong>を1つ選ぶ</li>
+<li>選ばれた点の参照点からの近さの順に<span class="math">\(X\)</span>を整列する</li>
+<li><span class="math">\(X_{i}\)</span>の順番に従い、確率<span class="math">\(P_{i}\)</span>でそれぞれ点が選ばれる</li>
+<li>点が選ばれなかったとき(確率<span class="math">\(1-P_{i}\)</span>)は次の<span class="math">\(X_{j}\)</span>について同様の操作</li>
+<li><p>すべての<span class="math">\(X\)</span>から点が選ばれなかったとき、その時刻には<span class="math">\(x_{0}\)</span>が選ばれたとみなして、$時刻を1進め、同じ操作を行う</p>
+<div align="center"></li>
+</ul>
+</div>
+<h2 id="a.-過去に依らず点が選ばれる場合">2-A. 過去に依らず点が選ばれる場合</h2>
+<ul>
+<li>参照する点: なし</li>
+<li><span class="math">\(X_{i}\)</span>が、<span class="math">\(N\)</span>個の<span class="math">\(X\)</span>の中で<span class="math">\(r+1\)</span>(<span class="math">\(r = 1, 2, \cdots , n-1\)</span>)番目に選ばれたとき <span class="math">\(X_{i}\)</span>まで順番が回ってくる確率は</li>
+</ul>
+<p><span class="math">\[p_{i}(r+1) = \frac{1}{_{n-1}C_{r}}\sum_{J = \langle j_{0}, \cdots ,j_{r-1} \rangle _{r}} \left( \prod_{j\in J}(1-P_{j}) \right) .\]</span></p>
+<blockquote>
+<p><span class="math">\(J = \langle j_{0}, j_{1}, \cdots ,j_{r-1} \rangle_{r}\)</span>は、<span class="math">\(i\)</span>を除く<span class="math">\(n-1\)</span>個の要素から <span class="math">\(r\)</span>個選んだときの組み合わせのうちの1揃いをあらわす</p>
+</blockquote>
+<ul>
+<li>1番目になるとき</li>
+</ul>
+<p><span class="math">\[p_{i}(1) = 1\]</span></p>
+<p>ex)</p>
+<p><span class="math">\(N = 5\)</span>, <span class="math">\(i = 1\)</span>, <span class="math">\(r = 2\)</span>のとき、<span class="math">\(X_{1}\)</span>からの点が選ばれるまでに2つの<span class="math">\(X\)</span>があり、その組み合わせは<span class="math">\((0,2)\)</span>, <span class="math">\((0,3)\)</span>, <span class="math">\((0,4)\)</span>, <span class="math">\((2,3)\)</span>, <span class="math">\((2,4)\)</span>, <span class="math">\((3,4)\)</span>の6つであり、これら一つ一つの組が<span class="math">\(J\)</span>である。この<span class="math">\(J\)</span>に関して和をとり、組み合わせの数<span class="math">\(\ _{4}C_{2} = 6\)</span>で割って期待値を求めている。</p>
+<p><span class="math">\[\begin{align}
+p_{i}(r+1) &amp;= \left[(1-P_{0})(1-P_{2}) + (1-P_{0})(1-P_{3}) + (1-P_{0})(1-P_{4}) \right.\\
+&amp;\ \left. + (1-P_{2})(1-P_{3}) + (1-P_{2})(1-P_{4}) + (1-P_{3})(1-P_{4}) \right]/6
+\end{align}\]</span></p>
+<div align="center">
+</div>
+<ul>
+<li>| 過去の点を参照しない | <span class="math">\(\Rightarrow\)</span> <span class="math">\(X_{i}\)</span>が<span class="math">\(r\)</span>番目となる確率は等しい</li>
+<li><span class="math">\(X_{i}\)</span>から点が選ばれる確率の期待値<span class="math">\(p_{i}\)</span></li>
+</ul>
+<p><span class="math">\[p_{i} = \frac{\sum_{r=1}^{n}p_{i}(r)}{n}P_{i}.\]</span></p>
+<ul>
+<li>(<span class="math">\(S&gt;K\)</span>なら)毎時刻ごとにこの確率で<span class="math">\(X_{i}\)</span>から点が選ばれることと等価</li>
+</ul>
+<p><span class="math">\(\Rightarrow\)</span>単純な確率過程に帰着</p>
+<h2 id="b.-一つの点を参照する場合-case-2-case-3">2-B. 一つの点を参照する場合 (case 2, case 3)</h2>
+<ol type="1">
+<li><span class="math">\(X_{i}\)</span>を選び、次に点(<span class="math">\(x\in [0, 1]\)</span>)を一様に選ぶ</li>
+<li><dl>
+<dt><strong>過去の点を参照して次の点<span class="math">\(x\)</span>を選ぶ</strong></dt>
+<dd><p>参照する点</p>
+</dd>
+</dl>
+<ol type="1">
+<li>なし (<strong>case 1</strong>)</li>
+<li><strong>一つの点</strong>
+<ol type="1">
+<li><strong>時刻0における点 (case 2)</strong></li>
+<li><strong>一つ前の時刻の点 (case 3)</strong></li>
+</ol></li>
+<li>二つの点</li>
+</ol></li>
+</ol>
+<ul>
+<li>点<span class="math">\(x\)</span>と点<span class="math">\(y\)</span>の間の近さの指標 <span class="math">\(\Rightarrow\)</span> <span class="math">\(a\)</span>次元ユークリッド距離</li>
+</ul>
+<p><span class="math">\[\begin{align}D(x, y) &amp;= d(x,y)\\
+&amp;= \sqrt{(x_{1} - y_{1})^{2} + (x_{2} - y_{2})^{2} + \cdots + (x_{a} - y_{a})^{2}}\end{align}\]</span></p>
+<div align="center">
+<p><span class="math">\(K=30\)</span>, <span class="math">\(N=6\)</span>, <span class="math">\(S=50\)</span>, <span class="math">\(a=2\)</span>, <span class="math">\(p=0.6\)</span>のとき 図4. [case 2] <span class="math">\(x_{0}\)</span>のみを参照</p>
+</div>
+<div align="center">
+<blockquote>
+<p>図5. [case 3] 一つ前の点のみを参照</p>
+</blockquote>
+</div>
+<h2 id="c.-二つの点を参照する場合-case-4-case-5">2-C. 二つの点を参照する場合 (case 4, case 5)</h2>
+<ol type="1">
+<li><span class="math">\(X_{i}\)</span>を選び、次に点(<span class="math">\(x\in [0, 1]\)</span>)を一様に選ぶ</li>
+<li><dl>
+<dt><strong>過去の点を参照して次の点<span class="math">\(x\)</span>を選ぶ</strong></dt>
+<dd><p>参照する点</p>
+</dd>
+</dl>
+<ol type="1">
+<li>なし <strong>(case 1)</strong></li>
+<li>一つの点 <strong>(case 2)</strong>, <strong>(case 3)</strong></li>
+<li><strong>二つの点</strong>
+<ol type="1">
+<li><strong>時刻0における点 + 一つ前の時刻の点 (case 4)</strong></li>
+<li><strong>二つ前の時刻までの点 (case 5)</strong></li>
+</ol></li>
+</ol></li>
+</ol>
+<ul>
+<li>点<span class="math">\(x\)</span>から2点<span class="math">\(y,z\)</span>までの近さの指標</li>
+</ul>
+<p><span class="math">\[D(x,(y,z)) = \alpha d(x,y) + \beta d(x,z)\ \ (\alpha, \beta &gt; 0)\]</span></p>
+<div align="center">
+<p><span class="math">\(K=30\)</span>, <span class="math">\(N=6\)</span>, <span class="math">\(S=50\)</span>, <span class="math">\(a=2\)</span>, <span class="math">\(p=0.6,\)</span> <span class="math">\(\alpha=2.5\)</span>, <span class="math">\(\beta=1\)</span>のとき 図6. [case 4] <span class="math">\(x_{0}\)</span>+一つ前の点を参照</p>
+</div>
+<div align="center">
+<blockquote>
+<p>図7. [case 5] 二つ前までの点を参照</p>
+</blockquote>
+</div>
+<h2 id="xの数nに対する1ステップあたりの移動距離の平均値phi"><span class="math">\(X\)</span>の数<span class="math">\(N\)</span>に対する1ステップあたりの移動距離の平均値<span class="math">\(\phi\)</span></h2>
+<div align="center">
+<blockquote>
+<p>図8.</p>
+</blockquote>
+<p><span class="math">\(X\)</span>の数<span class="math">\(N\)</span>に対する1ステップあたりの移動距離の平均値<span class="math">\(\phi\)</span></p>
+</div>
+<ul>
+<li>1ステップあたりの移動距離の平均値<span class="math">\(\phi\)</span></li>
+</ul>
+<p><span class="math">\[\phi \sim N^{-0.52}\]</span></p>
+<p>1つの点のまわりの直径<span class="math">\(r\)</span>による面積の期待値から、係数の絶対値は<span class="math">\(0.5\)</span>より大きい</p>
+<p><span class="math">\[\frac{1}{2}r^{4} - \frac{3}{8}r^{3} + \pi r^{2} \sim r^{c},\ \ c &lt; 2\ \ \ \text{when}\ \  0&lt;r&lt;0.5\]</span></p>
+<p><span class="math">\[1 \sim r^{c}N \Rightarrow r \sim N^{-1/c},\ \ \ \frac{1}{c} &gt; 0.5\]</span></p>
+<p>1つの点を領域<span class="math">\(\Omega=[0,1]\times [0,1]\)</span>から一様に選んだとき、<br />その点のまわりに長さ<span class="math">\(r\)</span>によって作られる領域の面積の期待値</p>
+<p>選んだ点が領域の中心付近では<span class="math">\(\mathcal{S} = \pi r^{2}\)</span>とできるが、<br />領域<span class="math">\(\Omega\)</span>の境界にかかっている場合には、それよりも小さい値となる。</p>
+<div align="center">
+<blockquote>
+<p>図: 領域<span class="math">\(\Omega\)</span>を分割した各領域</p>
+</blockquote>
+</div>
+<p><span class="math">\[p(r)_{\Omega&#39;} = \pi r^{2}\]</span></p>
+<p><span class="math">\[p(r)_{\Omega&#39;&#39;_{i}} = i \sqrt{r^{2}-i^{2}} + r^{2} \left[ \pi -\arccos \frac{i}{r} \right]\]</span></p>
+<p><span class="math">\[\begin{align}p(r)_{\Omega&#39;&#39;_{i,j}} = &amp;\frac{1}{2}\left\{ \sqrt{r^{2}-i^{2}} + \min \left(j, \sqrt{r^{2}-i^{2}}\right) \right\}i \\
+&amp;+ \frac{1}{2}\left\{ \sqrt{r^{2}-j^{2}} + \min \left( i, \sqrt{r^{2}-j^{2}}\right) \right\}j \\
+&amp;+ \frac{1}{2}r^{2} \left\{ 2\pi -\arccos \frac{i}{r}-\arccos \frac{j}{r}\right. \\
+&amp;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left. - \min \left( \frac{\pi}{2}, \arccos \frac{i}{r} +\arccos \frac{j}{r} \right) \right\}
+\end{align}\]</span></p>
+<p>それぞれの領域で積分を実行し、その結果を足せば<br />任意の点を選んだときの面積の期待値が得られる。</p>
+<div align="center">
+<blockquote>
+<p>図:</p>
+</blockquote>
+<p><span class="math">\(\vec{x} \in \Omega&#39;&#39;_{x}\)</span>であるときの面積<span class="math">\(S\)</span>の求め方</p>
+</div>
+<div align="center">
+<blockquote>
+<p>図:</p>
+</blockquote>
+<p><span class="math">\(\vec{x} \in \Omega&#39;&#39;_{x,y}\)</span>のときの面積<span class="math">\(S\)</span>の求め方の一例。</p>
+</div>
+<div align="center">
+<blockquote>
+<p>図9.</p>
+</blockquote>
+<p>選択確率<span class="math">\(p\)</span>に対する各ステップ間角度の平均値<span class="math">\(\theta\)</span>(°)</p>
+</div>
+<ul>
+<li><span class="math">\(p\rightarrow\)</span> 大 <span class="math">\(\Rightarrow\)</span> ステップ間角度の平均値は小さくなる 偏差はcaseに依らず50°程度</li>
+<li>case5は、戻りの効果によって角度は大きくなる</li>
+</ul>
+<div align="center">
+<blockquote>
+<p>図10. ステップ間角度<span class="math">\(\theta\)</span>のイメージ図</p>
+</blockquote>
+</div>
+<h2 id="近距離の点をクラスター化するモデル">近距離の点をクラスター化するモデル</h2>
+<ul>
+<li>ほとんどの設定は2で考えたものと同じ。</li>
+<li>ただし、閾値<span class="math">\(r\)</span>より近い位置にある点をすべてクラスター化</li>
+<li>同じクラスター内のどれかの点が選ばれると、それ以外の点は選ばれなくなる</li>
+</ul>
+<div align="center">
+<blockquote>
+<p>図11. クラスター同士を結ぶモデルのシミュレーション例(<span class="math">\(r=0.07\)</span>)</p>
+</blockquote>
+</div>
+<h2 id="クラスター化係数rに対するクラスターの数の推移">クラスター化係数<span class="math">\(r\)</span>に対するクラスターの数の推移</h2>
+<div align="center">
+<blockquote>
+<p>図.</p>
+</blockquote>
+<p>横軸<span class="math">\(r\)</span>、縦軸<span class="math">\(1-(\text{クラスターの数})/(\text{点の総数})\)</span></p>
+</div>
+<p>半径<span class="math">\(r\)</span>の中にある点同士を結ぶようにクラスターを作っていくときの点の総数に対するクラスターの数の割合。</p>
+<p>フィッティング関数: (<span class="math">\(\omega\sim 0.0715\)</span>)</p>
+<p><span class="math">\[\phi(r) = 1- \exp\left[ -\left( \frac{r}{\omega}\right)^{a}\right]\]</span></p>
+<h2 id="xの要素数nと平均ステップ間距離との関係"><span class="math">\(X\)</span>の要素数<span class="math">\(N\)</span>と平均ステップ間距離との関係</h2>
+<div align="center">
+<blockquote>
+<p>図12. クラスター同士を結ぶモデルにおける、</p>
+</blockquote>
+<p><span class="math">\(X_{i}\)</span>の数<span class="math">\(N\)</span>と平均ステップ間距離<span class="math">\(\phi\)</span>の関係</p>
+</div>
+<ul>
+<li>平均ステップ間距離<span class="math">\(\phi\)</span>は<span class="math">\(N\)</span>に対して下に凸な関数系</li>
+<li><span class="math">\(N\)</span>が小さいとき <span class="math">\(\Rightarrow\)</span> 点の密度小 <span class="math">\(\rightarrow\)</span> 点間距離増大(これまでと同じ理由)</li>
+<li><span class="math">\(N\)</span>が大きいとき <span class="math">\(\Rightarrow\)</span> 点の密度大 <span class="math">\(\rightarrow\)</span> クラスター化促進 <span class="math">\(\rightarrow\)</span> クラスター間距離増大</li>
+</ul>
+</section>
+<section id="結論" class="slide level1">
+<h1>結論</h1>
+<ul>
+<li>作成したそれぞれのモデルについて解析を行った</li>
+<li><p>システムサイズに関してベキ的に変化するような量を観察することができた</p>
+<p><span class="math">\[\phi \sim N^{-0.52}\]</span></p></li>
+<li>得られた結果は期待された結果と一致した</li>
+<li>系のサイズとの依存性について、基礎的な問題を解くことができた</li>
+</ul>
+</section>
+<section id="参考文献" class="slide level1">
+<h1>参考文献</h1>
+<ul>
+<li>Geoffrey West, James Brown, Brian Enquist, A General Model for the Origin of Allometric Scaling Laws in Biology, <em>Science</em>, Val.276, No.5309, pp.122-126, 1997.</li>
+<li>C. R. White, P. Cassey, T. M. Blackburn, Allometric exponents do not support a universal metabolic allometry, <em>Ecology</em>, <strong>88</strong>(2), 315-323 (2007).</li>
+<li>T. Kolokotrones, V. Savage, E. J. Deeds, W. Fontana, Curvature in metabolic scaling, <em>Nature L</em>, 464, 753-756 (2010)</li>
+<li>J. Kozlowski, J. Weiner, Interspecific allometries are by-products of body size optimization, <em>The American Naturalist</em>, <strong>149</strong>(2) (1997).</li>
+<li>G. B. West, J. H. Brown, Life's universal scaling laws, <em>Physics Today</em>, <strong>57</strong>, 36-49 (2004).</li>
+<li>H. A. Feldman, T. A. Mcmahon, The ¾ mass exponent for energy metabolism is not a statistical artifact, <em>Respiration Physiology</em>, <strong>52</strong>, 149-163, (1983).</li>
+<li>G. B. West, J. H. Brown, The origin of allometric scaling laws in biology from genomes to ecosystems towards a quantitative unifying theory of biological structure and organization, <em>The Journal of Experimental Biology</em>, <strong>208</strong>, 1575-1592 (2005).</li>
+<li><ol start="22" type="A">
+<li>M. Savage, J. F. Gilloly, W. H. Woodruff, G. B. West, A. P. Allen,</li>
+</ol>
+<p>B. J. Enquist, J. H. Erown, The predominance of quoter-power scaling in biology, <em>Functional Ecology</em>, <strong>18</strong>, 257-282 (2004).</p></li>
+<li>本川 達雄, 「ホヤ―群体形成と自己組織化」, 『自己組織化ハンドブック』, 330 - 331, 2009.</li>
+<li>石川 正純・足立 にれか・岡本 浩一, 会議分析のための数値シミュレーション技法-組織内集団に見られる意思決定モデルの開発-, 社会技術研究論文集, 2004.</li>
+<li>城 綾実・細馬 宏通, 多人数会話における自発的ジェスチャーの同期, <em>Congnitive Studies</em>, <strong>16</strong>(1), 103-119, 2009.</li>
+<li>藤本 学・大坊 郁夫, 小集団の会話の展開に及ぼす会話者の発話行動傾向の影響, <em>The Japanese Journal of Experimental Social Psychology</em>, <strong>47</strong>(1), 51-60, 2007.</li>
+<li>高良 美樹, 集団討議の参加者の人数が集団決定および個人決定に及ぼす影響について, <em>人間科学</em>, <strong>1</strong>, 67-84, 1998.</li>
+<li>山本浩・森隆一・藤曲哲郎, シミュレーションによる確率論, 日本評論社, 137-143, 1993.</li>
+</ul>
+</section>
